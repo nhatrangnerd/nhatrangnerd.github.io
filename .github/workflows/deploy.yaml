@@ -17,7 +17,10 @@ permissions:
 jobs:
   build:
     # runs-on: ubuntu-latest
-    runs-on: [self-hosted, on_hetzner-01, for_nhatrangnerd]
+    runs-on:
+      group: hetzner-01-nhatrangnerd
+      labels: [self-hosted, nhatrangnerd]
+      # labels: [self-hosted, on_hetzner-01, for_nhatrangnerd]
     # runs-on: [self-hosted, on_hetzner-01, for_thangthan]
     steps:
       - name: Checkout your repository using git
@@ -33,7 +36,10 @@ jobs:
     needs: build
     # runs-on: ubuntu-latest
     # runs-on: [self-hosted, on_hetzner-01, for_thangthan]
-    runs-on: [self-hosted, on_hetzner-01, for_nhatrangnerd]
+    runs-on: 
+      group: hetzner-01-nhatrangnerd
+      labels: [self-hosted, nhatrangnerd]
+      # labels: [self-hosted, on_hetzner-01, for_nhatrangnerd]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
