@@ -16,8 +16,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    # runs-on: [self-hosted, on_hetzner-01, for_nhatrangnerd]
+    # runs-on: ubuntu-latest
+    runs-on: [self-hosted, on_hetzner-01, for_nhatrangnerd]
     # runs-on: [self-hosted, on_hetzner-01, for_thangthan]
     steps:
       - name: Checkout your repository using git
@@ -31,8 +31,8 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    # runs-on: [self-hosted, on_hetzner-01, for_thangthan]
+    # runs-on: ubuntu-latest
+    runs-on: [self-hosted, on_hetzner-01, for_thangthan]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
