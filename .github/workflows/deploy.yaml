@@ -32,7 +32,8 @@ jobs:
   deploy:
     needs: build
     # runs-on: ubuntu-latest
-    runs-on: [self-hosted, on_hetzner-01, for_thangthan]
+    # runs-on: [self-hosted, on_hetzner-01, for_thangthan]
+    runs-on: [self-hosted, on_hetzner-01, for_nhatrangnerd]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
